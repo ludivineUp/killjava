@@ -25,6 +25,11 @@ public class Alcool {
         this.degre = degre;
         this.volume = volume;
     }
+    public Alcool(String name, double degre, double volume) {
+        this.name = name;
+        this.degre = degre;
+        this.volume = volume;
+    }
 
     public int getId() {
         return id;

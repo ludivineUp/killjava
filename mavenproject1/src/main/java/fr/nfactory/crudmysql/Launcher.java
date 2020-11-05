@@ -7,6 +7,7 @@ package fr.nfactory.crudmysql;
 
 import fr.nfactory.crudmysql.beans.Alcool;
 import fr.nfactory.crudmysql.dao.DaoFactory;
+import fr.nfactory.crudmysql.gui.MainFrame;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -24,11 +25,19 @@ public class Launcher {
     public static void main(String... args){
         try {
             ArrayList<Alcool> alcools = DaoFactory.getAlcoolDao().getAll();
+            MainFrame mf = new MainFrame(alcools);
+            //mf.setVisible(true);
+            
+            // test du crud
+            
+            /*ArrayList<Alcool> alcools = DaoFactory.getAlcoolDao().getAll();
             alcools.forEach(System.out::println);
             for(Alcool a : alcools){
                 System.out.println(a);
             }
             System.out.println("Le premier alcool est "+ DaoFactory.getAlcoolDao().get(1));
+            DaoFactory.getAlcoolDao().add(new Alcool("Bacardi",40,0.75));
+            DaoFactory.getAlcoolDao().delete(6);*/
         } catch (SQLException ex) {
             Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
         }
