@@ -28,6 +28,7 @@ public class Launcher {
             for(Alcool a : alcools){
                 System.out.println(a);
             }
+            System.out.println("Le premier alcool est "+ DaoFactory.getAlcoolDao().get(1));
         } catch (SQLException ex) {
             Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
         }
