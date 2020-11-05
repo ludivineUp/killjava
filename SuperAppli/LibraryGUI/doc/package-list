@@ -1,0 +1,9 @@
+fr.library.beans
+fr.library.controller
+fr.library.dao
+fr.library.dao.impl
+fr.library.gui
+fr.library.gui.listener
+fr.library.gui.model
+fr.library.gui.panel
+fr.library.launcher
