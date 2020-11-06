@@ -33,6 +33,7 @@ public class MainFrame extends JFrame{
     private JPanel panel;
     private JButton addAlcoolBtn;
     private DefaultListModel model = new DefaultListModel();
+    private Alcool newAlcool;
     
     public MainFrame(ArrayList<Alcool> alcools ){
         super();
@@ -67,8 +68,6 @@ public class MainFrame extends JFrame{
         try {
             alcools = DaoFactory.getAlcoolDao().getAll();
             model.addElement(alcools.get(alcools.size()-1));
-            //initComponent();
-            //SwingUtilities.updateComponentTreeUI(this);
         } catch (SQLException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -77,4 +76,16 @@ public class MainFrame extends JFrame{
     public MainFrame getThis(){
         return this;
     }
+
+    public Alcool getNewAlcool() {
+        return newAlcool;
+    }
+
+    public void setNewAlcool(Alcool newAlcool) {
+        System.out.println("alcool passé en param "+newAlcool);
+        this.newAlcool = newAlcool;
+    }
+    
+    
+    
 }

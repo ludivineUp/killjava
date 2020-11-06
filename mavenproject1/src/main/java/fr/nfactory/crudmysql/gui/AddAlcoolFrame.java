@@ -35,7 +35,7 @@ public class AddAlcoolFrame extends JFrame {
     
     public AddAlcoolFrame(MainFrame maman){
         super();
-        setTitle("Nouvel alcoll");
+        setTitle("Nouvel alcool");
         setBounds(100, 100, 200, 400);
         setMinimumSize(new Dimension(200,200));
         this.alcool = new Alcool();
@@ -75,6 +75,7 @@ public class AddAlcoolFrame extends JFrame {
                 } catch (SQLException ex) {
                     Logger.getLogger(AddAlcoolFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                maman.setNewAlcool(alcool);
                 setVisible(false);
                 maman.refresh();
             }
